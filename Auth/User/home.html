@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-1">
+              <a class="nav-link" href="#">Username </a>
+            </li>
+             <li class="nav-item mx-1">
+              <a class="nav-link" href="#">Sign Out </a>
+            </li>
+            
+      </nav>
+
+      <script type="module">
+
+import { initializeApp } from "https:///www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+
+const firebaseConfig = {
+   apiKey: "AIzaSyDn0YLSUKggpOhhhnI5UBREb0QuEo1nyJs",
+   authDomain: "fluffy-2ea00.firebaseapp.com",
+   databaseURL: "https://fluffy-2ea00.firebaseio.com",
+   projectId: "fluffy-2ea00",
+   storageBucket: "fluffy-2ea00.appspot.com",
+   messagingSenderId: "72613846505",
+   appId: "1:72613846505:web:4de27416d540c887f13f78",
+   measurementId: "G-WX371X996X"
+ };
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+import { getDatabase, ref, set, child, get} 
+    from "https:///www.gstatic.com/firebasejs/9.6.3/firebase-database.js";
+
+    const db = getDatabase();
+
+//referenece
+
+let userlink = document.getElementById('userlink');
+let signoutlink = document.getElementById('signoutlink');
+let header = document.getElementById('hh');
+var currentUser = null;
+
+//functions
+
+function getUserName(){
+    let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+    if(keepLoggedIn == "yes"){
+        currentUser = JSON.parse(localStorage.getItem('user'));
+    }
+    else{
+        currentUser = JSON.parse(sessionStorage.getItem('user'));
+    }
+}
+
+function Signout(){
+    sessionStorage.removeItem('user');
+    localStorage.removeItem('user');
+    localStorage.removeItem('keepLoggedIn');
+    window.location = "home.html";
+}
+
+//window loads
+   window.onload = function(){
+       getUserName();
+       if(currentUser == null){
+           userlink.innerText="Create New Account";
+           userlink.classList.replace("nav-link","btn");
+           userlink.classList.add("btn-primary");
+           userlink.href = "register.html";
+
+           signoutlink.innerText = "Login";
+           signoutlink.classList.replace("nav-link","btn");
+           signoutlink.classList.add("btn-sucess");
+           signoutlink.href = "login.html"
+       }
+
+       else{
+        userlink.innerText= currentUser.username;
+        header.innerText = "Welcome "+ currentUser.fullname;
+           userlink.classList.replace("btn", "nav-link");
+           userlink.classList.remove("btn-primary");
+           userlink.href = "#";
+
+           signoutlink.innerText = "Sign out";
+           signoutlink.classList.replace("btn","nav-link");
+           signoutlink.classList.remove("btn-sucess");
+           signoutlink.href = "javascript:signout()";
+       }
+   }
+
+   </script>
+
+</body>
+</html>

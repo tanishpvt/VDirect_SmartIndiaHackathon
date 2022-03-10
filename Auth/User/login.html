@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mb-5">
+        <h3 class="mb-3">Login</h3>
+        <input type="text" placeholder="Email" id="emailInp" class="form-control mb-3">
+        <input type="text" placeholder="Username" id="userInp" class="form-control mb-3">
+        <input type="text" placeholder="Password" id="passInp" class="form-control mb-3">
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">Keep Me Logged In</label>
+          </div>
+        <button type="text" id ="sub_btn" class="btn w-100 btn-outline-primary mb-3">Login In</button>
+        <a href="register.html" class="badge badge-secondary py-1 w-100">Want to Create A New Account</a>
+    </div>
+
+    <script type="module">
+
+ import { initializeApp } from "https:///www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+
+ const firebaseConfig = {
+    apiKey: "AIzaSyDn0YLSUKggpOhhhnI5UBREb0QuEo1nyJs",
+    authDomain: "fluffy-2ea00.firebaseapp.com",
+    databaseURL: "https://fluffy-2ea00.firebaseio.com",
+    projectId: "fluffy-2ea00",
+    storageBucket: "fluffy-2ea00.appspot.com",
+    messagingSenderId: "72613846505",
+    appId: "1:72613846505:web:4de27416d540c887f13f78",
+    measurementId: "G-WX371X996X"
+  };
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+import { getDatabase, ref, set, child, get} 
+     from "https:///www.gstatic.com/firebasejs/9.6.3/firebase-database.js";
+
+     const db = getDatabase();
+
+
+         //  Refrence for fribase database
+    // const name = document.getElementById('nameInp');
+    // const email = document.getElementById('emailInp');
+    const username = document.getElementById('userInp');
+    const pass = document.getElementById('passInp');
+    const cnfpass = document.getElementById('cnfpassInp');
+    const submit = document.getElementById('sub_btn');
+
+    //authentication process
+
+    function AuthenticateUser(){
+        const dbref = ref(db);
+
+        get(child(dbref, "UserList/"+ username.value)).then((snapshot) =>{
+        if(snapshot.exists()){
+            // let dbpass = decpass(snapshot.val().password);
+            let dbpass = (snapshot.val().password);
+            if(dbpass == pass.value){
+                login(snapshot.val);
+            }
+            else{
+                alert("user dosent exsist");
+            }
+        }
+        else{
+            alert("username or password is invalid");
+        }
+    });
+
+    }
+
+     //decryption of password in firebase database
+
+     function decPass(dbpass){
+         var pass12 = cryptoJS.AES.decrypt(dbpass, pass.value);
+         return pass12.toString(cryptoJS.enc.utf8);
+     }
+
+     //Login
+     function login(user){
+     let keepLoggedIn = document.getElementById('customSwitch1').checked;
+      if(!keepLoggedIn){
+          sessionStorage.setItem('user',JSON.stringify(user));
+          window.location="home.html";
+      }
+      else{
+          localStorage.setItem('keepLoggedIn','yes');
+          localStorage.setItem('user', JSON.stringify(user));
+          window.location="home.html";
+      }
+     }
+
+         //ASSIGNING EVENT
+         submit.addEventListener('click', AuthenticateUser);
+// firebase.analytics();
+    </script>
+</body>
+</html>
