@@ -91,7 +91,7 @@
         <div class="header">
             <h2>Add Project</h2>
         </div>
-        <form class="form" id="form">
+        <form class="form" id="form" action="timeline.html">
             <div class="form-control">
                 <label>Project  Title</label>
                 <br>
@@ -105,7 +105,8 @@
                       if(name=='Other')document.getElementById('div1').innerHTML='Other domain: <br><input type="text" name="other" />';
                       else document.getElementById('div1').innerHTML='';
                     }
-		    </script>
+                    </script>
+                    <!--style="width:500px;max-height:50px;overflow-y:scroll;"-->
                     <select name="domain" class="domain" id="domain" onfocus="this.size=5;"
                     onblur="this.size=1;"  onchange="showfield(this.options[this.selectedIndex].value);this.size=1; this.blur();" required>
                         <option value="" disabled selected>Select your domain</option>
@@ -190,8 +191,8 @@
                       document.getElementById('div2').innerHTML='<label style="font-size:18px">Other Information</label><br><input type="text"/>';
                     }
                     </script>
-            <button onClick="showfield()" style='margin-left:25%;margin-right:16px'>Add Section</button>
-            <button type="submit" style='margin-right:16px'>Upload Project</button>
+              <button onClick="showfield()" style='margin-left:25%;margin-right:16px'>Add Section</button>
+              <button type="submit"  style='margin-right:16px'>Upload Project</button>
         </div>
         </form>
     </div>
