@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Rambla|Staatliches&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+*::selection{
+    background-color: black;
+    color: blanchedalmond;
+}
+
+:root{
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-border: #ffffff34;
+    --font-staat: 'Staatliches', cursive;
+    --font-os:  'Oswald', sans-serif;
+    --font-ram: 'Rambla', sans-serif;
+}
+
+/* global classes */
+.font-staat{
+    font: normal 400 18px var(--font-staat);
+}
+.font-os{
+    font: normal 300 18px var(--font-os);
+}
+.font-ram{
+    font: normal bold 18px var(--font-ram);
+}
+
+.font-size-40{
+    font-size: 40px;
+}
+.font-size-34{
+    font-size: 34px;
+}
+.font-size-27{
+    font-size: 27px;
+}
+.font-size-20{
+    font-size: 20px;
+}
+.font-size-16{
+    font-size: 16px;
+}
+
+.bgcolor-black{
+    background-color: var(--color-black);
+}
+
+/* #global classes */
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:1;
+    transition: left .5s ease;
+}
+
+#header nav{
+    height: 100vh;
+}
+#header .site-title .navbar-brand{
+    letter-spacing: 2px;
+    color: var(--color-white);
+}
+
+#header .nav-link{
+    margin: .7rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    text-transform: uppercase;
+}
+
+#header .nav-link:hover{
+    color: var(--color-white) !important;
+}
+
+#header .toggle-button{
+    background: none;
+    color: var(--color-black);
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    border: 1px solid var(--color-border);
+}
+
+.toggle-left{
+    left: 0 !important;
+    width: 1000px !important;
+}
+
+/* site-main */
+
+.site-banner .banner-area{
+    background: url(./assets/Banner_image.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.site-banner .banner-area .author{
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.site-banner .banner-area .author .author-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: auto;
+    background: url(./assets/tan3.jpeg) no-repeat;
+    background-size: 100%;
+    background-position: 40% 0;
+}
+
+.skill .bars p, .site-content .skill .bars span{
+    line-height: 10px;
+}
+
+#footer form .row .col input[type="text"],
+#footer form .row .col input[type="email"],
+#footer form textarea{
+    padding: 1rem 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    border-bottom: 1px solid gray;
+    box-shadow: none;
+    resize: none;
+}
+
+
+@media screen and (min-width: 768px){
+    .toggle-button{
+        display: none;
+    }
+    #header{
+        z-index:0;
+    }
+}
+
+/* #site-main */
+
+
+/*panel hover */
+
+.panel{
+    transform: scale(0.95);
+    background-color: #f7f7f7;
+    cursor: pointer;
+    transition: ease 0.5s;
+}
+.panel:hover{
+    transform: scale(1.00);
+}
+
+body::-webkit-scrollbar {
+    width: 4px;
+    padding-top: 50px;
+}
+body::-webkit-scrollbar-track {
+    background: white;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom right,    #000000, #1a1a1a);
+    border-radius: 3rem;
+}
+
+.btn-dark-1{
+    background-color: #000000bb;
+    color: #f7f7f7;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all ease 0.5s;
+}
+.btn-dark-1:hover{
+    color: #fff;
+    background-color: #000;
+    transform: scale(1.03);
+}
+
+/* BUTTONS */
+
+.wrapper .btns{
+    display: flex;
+    margin: 30px 0 20px 0;
+  }
+  .btns a{
+    position: relative;
+    margin: 0 20px;
+    height: 60px;
+    width: 200px;
+    display: block;
+    line-height: 60px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  .btns a:first-child{
+    background: linear-gradient(-90deg, #f5ce62, #e85a19);
+  }
+  .btns a:last-child{
+    background: linear-gradient(90deg, #0162c8, #55e7fc);
+  }
+  .btns a > span{
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: ripples 0.6s linear infinite;
+  }
+
+
+  #particles-js{ 
+    position:relative;
+    z-index:2;
+    
+    }
