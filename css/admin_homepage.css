@@ -1,0 +1,191 @@
+@import 'janhavi_utilities.css';
+:root{
+    --primary:#3DCFD3;
+    --secondary:#070606;
+    --dark:#161616;
+    --pure:#FFFFFF;
+    --ternary:#898989;
+    --light:#F2F2F2;
+    --blue:#00032B;
+}
+body{
+    font-family: 'Poppins',sans-serif;
+    overflow-x: hidden;
+    width:100%;
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: var(--blue);
+    padding-bottom: 2rem;
+}
+.container{
+    max-width:1125px;
+    padding:0 15px;
+    margin:0 auto;
+}
+@media (min-width: 576px){
+    .container{
+        max-width:540px;
+    }
+}
+@media (min-width: 768px){
+    .container{
+        max-width:720px;
+    }
+}
+@media (min-width: 992px){
+    .container{
+        max-width:960px;
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        max-width:1152px;
+    }
+}
+header nav {
+    padding:0.5rem 0;
+    background-color: var(--blue);
+}
+header nav .branding{
+    color: var(--pure);
+    text-decoration: none;  
+    font-size: large; 
+    font-weight: bolder;
+    padding-right: 1rem;
+}
+header nav .branding h1 span{
+    color:var(--primary);
+}
+header .a button{
+    text-decoration: none;
+    color: var(--primary)
+}
+header nav .left .branding{
+    color:var(--pure);
+}
+header nav .left a{
+    color:var(--pure);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    text-transform: uppercase;
+    transition: all .3s ease;
+}
+header nav .left input{
+    margin-left: 2.5rem;
+    padding: 1px;
+    margin-top: 2px;
+    margin-left: 2.5rem;
+    border: none;
+    font-size: 18px;
+}
+header nav .left a:hover{
+    color:var(--primary);
+}
+header nav .branding{
+    margin-right:1rem;
+}
+header nav .right a button{
+     color:var(--pure);
+}
+header nav .right a button img{
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+header nav .right a button:hover{
+    color:var(--primary);
+}
+.hero{
+    padding:2rem 0;
+}
+.hero img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.hero .right h6{
+    font-size: 2rem;
+    color:var(--pure);
+    margin-bottom:0rem;
+    margin-top: 0rem;
+}
+.hero .right p {
+    font-size: 1rem;
+    color:var(--pure);
+}
+section.approval{
+    background: var(--light); 
+    text-align: center;
+    padding: 3rem 0 ;
+}
+section.approval h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 2rem;
+}
+section.approval .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-column-gap:2rem ;
+    grid-row-gap:5rem ;
+}
+section.approval .card-wrapper .card{
+    background: var(--pure);
+    padding:2rem 2rem;
+    position: relative;
+    padding-top: 0rem;
+    text-align: center;
+    transition: all .3s ease;
+} 
+section.approval .card-wrapper .card h2{
+    font-family: 'poppins';
+}
+section.approval .card-wrapper .card p{
+    font-family: 'poppins';
+    color: var(--dark);
+}
+section.projects {
+    background: var(--pure); 
+    text-align: center;
+    padding: 3rem 0 ;
+}
+section.projects h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 2rem;
+}
+section.projects .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-column-gap:2rem ;
+    grid-row-gap:5rem ;
+}
+section.projects .card-wrapper .card{
+    background: var(--secondary);
+    padding:2rem 2rem;
+    position: relative;
+    padding-top: 0rem;
+    text-align: center;
+    transition: all .3s ease;
+} 
+section.projects .card-wrapper .card h2{
+    font-family: 'poppins';
+    color: #3DCFD3;
+}
+section.projects .card-wrapper .card p{
+    font-family: 'poppins';
+    color: var(--light);
+}
+footer{
+    background: var(--blue);
+    text-align: center;
+    color:var(--pure);
+}
