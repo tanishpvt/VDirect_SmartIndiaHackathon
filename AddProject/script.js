@@ -24,6 +24,8 @@ const renderUser = doc => {
       <td>${doc.data().pintroduction}</td>
       <td>${doc.data().packnowledgement}</td>
       <td>${doc.data().problemstatement}</td>
+      <td>${doc.data().psoluton}</td>
+      <td>${doc.data().pliteraturesurvey}</td>
       <td>${doc.data().Projectlink}</td>
       <td>${doc.data().pvideo}</td>
       <td>
@@ -47,6 +49,8 @@ const renderUser = doc => {
     editModalForm.pintroduction.value = doc.data().pintroduction;
     editModalForm.packnowledgement.value = doc.data().packnowledgement;
     editModalForm.problemstatement.value = doc.data().problemstatement;
+    editModalForm.problemstatement.value = doc.data().psoluton;
+    editModalForm.problemstatement.value = doc.data().pliteraturesurvey;
     editModalForm.Projectlink.value = doc.data().Projectlink;
     editModalForm.pvideo.value = doc.data().pvideo;
 
@@ -75,6 +79,8 @@ btnAdd.addEventListener('click', () => {
   addModalForm.pintroduction.value = '';
   addModalForm.packnowledgement.value = '';
   addModalForm.problemstatement.value = '';
+  addModalForm.psoluton.value = '';
+  addModalForm.pliteraturesurvey.value = '';
   addModalForm.Projectlink.value = '';
   addModalForm.pvideo.value = '';
 });
@@ -127,6 +133,8 @@ addModalForm.addEventListener('submit', e => {
     pintroduction: addModalForm.pintroduction.value,
     packnowledgement: addModalForm.packnowledgement.value,
     problemstatement: addModalForm.problemstatement.value,
+    psoluton: addModalForm.psoluton.value,
+    pliteraturesurvey: addModalForm.pliteraturesurvey.value,
     Projectlink: addModalForm.Projectlink.value,
     pvideo: addModalForm.pvideo.value,
   });
@@ -144,6 +152,8 @@ editModalForm.addEventListener('submit', e => {
     pintroduction: addModalForm.pintroduction.value,
     packnowledgement: addModalForm.packnowledgement.value,
     problemstatement: addModalForm.problemstatement.value,
+    psoluton: addModalForm.psoluton.value,
+    pliteraturesurvey: addModalForm.pliteraturesurvey.value,
     Projectlink: addModalForm.Projectlink.value,
     pvideo: addModalForm.pvideo.value,
   });
