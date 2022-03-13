@@ -127,3 +127,21 @@ a {
               transform: translate(-50%, -50%) rotate(405deg); }
 
 /*# sourceMappingURL=style.css.map */
+
+.btn-add {
+  width: 6rem;
+  height: 2rem;
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+}
+
+.btn {
+  background: transparent;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: all .5s ease;
+}
