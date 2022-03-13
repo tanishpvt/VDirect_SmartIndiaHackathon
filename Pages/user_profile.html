@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" 
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" 
+      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+      <script src="jquery-3.6.0.min.js"></script>
+      <title>WeDirect</title>
+      <link rel="stylesheet" href="./css/user_profile.css">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="site-main-wrapper">
+
+          <button id="btnScrollToTop">
+            <i class="material-icons">arrow_upward</i>
+         </button>  
+ 
+         <button class="hamberger">
+           <img src="./images/hamberger.svg" alt="">
+         </button>
+ 
+            <div class="mobile-nav">
+              <button class="times">
+                <img src="./images/times.svg" alt=""></img>
+              </button>
+              <ul>
+                <li><div class="logo"><a href=#><span>We</span>Direct</a></div></li>          
+                <li><a href=#>Explore</a>
+                <li><a href="#">Trending</a>
+                <li><a href="#footer">About Us</a>
+              </ul>
+            </div>  
+
+            <header style="background-color: #00032B;">
+                <div class="container">
+                    <nav id="main-nav"class="flex items-center justify-between" style="background-color: #00032B;">
+                        <div class="left flex items-center " >
+                          <div class="branding"style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                            <h1><span style="color:aqua">We</span>Direct</h1>
+                          </div>
+                          <div >
+                              <a href=#>Explore</a>
+                              <a href="#">Features</a>
+                              <a href="#">Trending</a>
+                              <a href="#footer">About Us</a>
+                              <input type="text" placeholder="Search..">
+                          </div>           
+                        </div>
+                        <div class="right" >
+                          <div class="dropdown">
+                            <button class="btn btn-transparent"><img class="avatar" src="./images/avatar.png" alt="Avatar">  Profile</button>
+                            <div class="dropdown-content">
+                              <a href="#your_account">Your Account</a>
+                              <a href="#yourprojects">Your Projects</a>
+                              <a href="#savedprojects">Saved Projects</a>
+                            </div>
+                          </div>
+                        </div>
+                    </nav>
+                    <div class="hero flex items-center justify-between" id="your_account">
+                        <div class="left flex-1 flex justify-center"> 
+                        <img class="avatar" src="./images/avatar.png" alt="Avatar">
+                        </div>  
+                        <div class="right flex-1">
+                          <h6 >Your Account<a href=""><img class="settings" src="./images/settings.png" alt="settings"></a></img></h6>
+                          <p>
+                            <h3><strong style="font-size: 18px">Name:</strong><span style= "font-size: 15px"> </span></h3>
+                            <h3><strong style="font-size: 18px">Email:</strong><bold style= "font-size: 15px"> </bold></h3>
+                            <h3><strong style="font-size: 18px">University:</strong><bold style= "font-size: 15px"> </bold></h3>
+                            <h3><strong style="font-size: 18px">College:</strong><bold style= "font-size: 15px"> </bold></h3>
+                            <h3><strong style="font-size: 18px">Website:</strong><bold style= "font-size: 15px"> </bold></h3>
+                        </p>
+                         <div class="button">                     
+                            
+                               <button onclick="add_project.html" class="btn btn-secondary" style="color: var(--pure);
+                               border-color:var(--pure); background-color:transparent;">
+                                 Add Project
+                                </button>
+                                                                        
+                         </div>
+                        </div>
+                  </div>
+                </div>  
+            </header>
+
+            <section id="yourprojects"class="yourprojects">
+              <h1>Your Projects</h1>
+              <div class="container">
+                <div class="card-wrapper">
+                  <div class="card">
+                    <a href=""><img src="./images/card.jpg" alt=""></a>
+                    <h2>Advanced Face Detection System</h2>
+                    <p>Vidyalankar Institute of technology</p>
+                    <p style="font-size: 10px;">India, officially the Republic of 
+                      India (Hindi: Bhārat Gaṇarājya),[24]
+                      is a country in South Asia. It is 
+                      the Arabian Sea on the southwest,
+                      and the Bay of Bengal on the southeast,
+                    </p>
+                    <button id="view" class="btn btn-transparent">View Project</button>
+                    <button id="save" class="btn btn-transparent">Save</button>
+                  </div>
+                </div>  
+              </div>
+            </section>
+
+            <section id="savedprojects" class="savedprojects">
+              <h1>Saved Projects</h1>
+              <div class="container">
+                <div class="card-wrapper">
+                  <div class="card">
+                    <a href=""><img src="./images/card.jpg" alt=""></a>
+                    <h2>Advanced Face Detection System</h2>
+                    <p>Vidyalankar Institute of technology</p>
+                    <p style="font-size: 10px;">India, officially the Republic of 
+                      India (Hindi: Bhārat Gaṇarājya),[24]
+                      is a country in South Asia. It is 
+                      the Arabian Sea on the southwest,
+                      and the Bay of Bengal on the southeast,
+                    </p>
+                    <button id="view" class="btn btn-transparent">View Project</button>
+                    <button id="save" class="btn btn-transparent">Save</button>
+                  </div>
+                </div>  
+              </div>
+            </section>
+  
+            <footer id="footer" style="background: #00032B; font-size: 15px" class="page-footer font-small indigo">
+              <!-- Footer Links -->
+             <div class="container text-center text-md-left">
+                 <!-- Grid row -->
+                 <div class="row">
+                 <!-- Grid column -->
+                 <div class="col-md-3 mx-auto">
+                     <!-- Links -->
+                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Need Help?</h5>
+                     <ul class="list-unstyled">
+                     <li>
+                         <a>Contact Us:</a>
+                     </li>
+                     <li>
+                         <a href="#!">+91 1234567890</a>
+                     </li>
+                     <li>
+                         <a>Write to Us:</a>
+                     </li>
+                     <li>
+                         <a href="#!">abcd@aicte.edu.in</a>
+                     </li>
+                     </ul>
+                 </div>
+                 <!-- Grid column -->
+                 <hr class="clearfix w-100 d-md-none">
+                 <!-- Grid column -->
+                 <div class="col-md-3 mx-auto">
+                     <!-- Links -->
+                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Services</h5>
+                     <ul class="list-unstyled">
+                         <li>
+                             <a href="#!">Invite us to your</a>
+                         </li>
+                         <li>
+                             <a href="#!">organization</a>
+                         </li>
+                     </ul>
+                 </div>
+                 <!-- Grid column -->
+                 <hr class="clearfix w-100 d-md-none">
+                 <!-- Grid column -->
+                 <div class="col-md-3 mx-auto">
+                     <!-- Links -->
+                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Our Team</h5>
+                     <ul class="list-unstyled">
+                     <li>
+                         <a>Address: 123, abc complex,</a>
+                     </li>
+                     <li>
+                         <a>Mumbai, Maharashtra,</a>
+                     </li>
+                     <li>
+                         <a>India - 402201</a>
+                     </li>
+                     </ul>
+                 </div>
+                 <!-- Grid column -->
+                 <hr class="clearfix w-100 d-md-none">
+                 <!-- Grid column -->
+                 <div class="col-md-3 mx-auto">
+                     <!-- Links -->
+                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Follow</h5>
+                     <ul class="list-unstyled">
+                     <li>
+                         <a style="color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram fa-lg"></i></a>
+                     </li>
+                     <li>
+                         <a style="color: #55acee;" href="#!" role="button"><i class="fab fa-twitter fa-lg"></i></a>
+                     </li>
+                     <li>
+                         <a style="color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f fa-lg"></i></a> 
+                     </li>
+                     <li>
+                         <a style="color: #0082ca;" href="#!" role="button"><i class="fab fa-linkedin fa-lg"></i></a>
+                         </li>
+                     </ul>
+                 </div>
+                 <!-- Grid column -->
+                 </div>
+                 <!-- Grid row -->
+             </div>
+             <!-- Footer Links -->
+           <div class="Copyright">
+             Copyright © 2022 WeDirect. All Rights Reserved
+           </div>
+         </footer>
+
+        </div>
+        
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+          </script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+            integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          <script type="text/javascript">
+                  $('.slider').slick({
+                    arrows:false,
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+
+                    responsive: [
+                      {
+                        breakpoint: 1024,
+                        settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1,
+                          infinite: true,
+                          dots: true
+                        }
+                      },
+                      {
+                        breakpoint: 600,
+                        settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1,
+                        }
+                      },
+                      {
+                        breakpoint: 480,
+                        settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1
+                        }
+                      }
+                      // You can unslick at a given breakpoint now by adding:
+                      // settings: "unslick"
+                      // instead of a settings object
+                    ]
+            });
+          </script>
+          <script type="text/javascript">
+            let hamberger = document.querySelector('.hamberger');
+            let times = document.querySelector('.times');
+            let mobileNav = document.querySelector('.mobile-nav');
+
+            hamberger.addEventListener('click',function(){
+                mobileNav.classList.add('open');    
+            });
+
+            times.addEventListener('click',function(){
+                mobileNav.classList.remove('open');   
+            });
+
+          </script>
+          <script type="text/javascript">
+            const btnScrollToTop = document.querySelector('#btnScrollToTop');
+            btnScrollToTop.addEventListener("click",function(){
+                $("html, body").animate({ scrollTop: 0}, "slow");
+              });
+            $(window).scroll(function(){
+              if($(window).scrollTop() > 200){
+                $("#btnScrollToTop").fadeIn();
+              }
+              else{
+                  $("#btnScrollToTop").fadeOut();
+              }
+            });
+          </script>
+          <script type="text/javascript">
+            // When the user scrolls the page, execute myFunction
+              window.onscroll = function() {myFunction()};
+          
+              // Get the navbar
+              var nav = document.getElementById("nav");
+          
+              // Get the offset position of the navbar
+              var sticky = nav.offsetTop;
+          
+              // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+              function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                  nav.classList.add("sticky")
+                } else {
+                  nav.classList.remove("sticky");
+                }
+              }
+          </script>
+    </body>
+</html>
+
