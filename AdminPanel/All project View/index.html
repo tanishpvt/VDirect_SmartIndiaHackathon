@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Project</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h3>Project List</h3>
+    </header>
+    <div class="table-wrapper">
+      <table class="table-users">
+        <tr>
+          <th>Project Title</th>
+          <th>Domain </th>
+          <th>Project Description</th>
+          <th>Technology Used</th>
+          <th>Introduction</th>
+          <th>Acknowledgement</th>
+          <th>Problem Statement</th>
+          <th>Solution</th>
+          <th>Literature Survey</th>
+          <th>Project Link</th>
+          <th>video</th>
+          <th>Action</th>
+        </tr>
+      </table>
+      <button class="btn btn-add">Add Project</button>
+    </div>
+    <!-- Add Modal -->
+    <div class="add-modal modal-wrapper">
+      <div class="modal">
+        <div class="modal-header"><h3>Add Project</h3></div>
+        <div class="modal-body">
+          <form class="form" autocomplete="off">
+            <input type="text" name="ptitle" placeholder="Project Title">
+            <input type="text" name="pdomain" placeholder="Domain">
+            <input type="text" name="pdescription" placeholder="Project Description">
+            <input type="text" name="ptechused" placeholder="Technology Used">
+            <input type="text" name="pintroduction" placeholder="Introduction">
+            <input type="text" name="packnowledgement" placeholder="Acknowledgement">
+            <input type="text" name="problemstatement" placeholder="Problem Statement">
+            <input type="text" name="psoluton" placeholder="Solution">
+            <input type="text" name="pliteraturesurvey" placeholder="Literature Survey">
+            <input type="text" name="Projectlink" placeholder="Project Link">
+            <input type="text" name="pvideo" placeholder="video">
+            <button class="btn btn-modal">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="edit-modal modal-wrapper">
+      <div class="modal">
+        <div class="modal-header"><h3>Edit Project</h3></div>
+        <div class="modal-body">
+          <form class="form" autocomplete="off">
+            <input type="text" name="ptitle" placeholder="Project Title">
+            <input type="text" name="pdomain" placeholder="Domain">
+            <input type="text" name="pdescription" placeholder="Project Description">
+            <input type="text" name="ptechused" placeholder="Technology Used">
+            <input type="text" name="pintroduction" placeholder="Introduction">
+            <input type="text" name="packnowledgement" placeholder="Acknowledgement">
+            <input type="text" name="problemstatement" placeholder="Problem Statement">
+            <input type="text" name="psoluton" placeholder="Solution">
+            <input type="text" name="pliteraturesurvey" placeholder="Literature Survey">
+            <input type="text" name="Projectlink" placeholder="Project Link">
+            <input type="text" name="pvideo" placeholder="video">
+            <button class="btn btn-modal">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+  const firebaseConfig = {
+  apiKey: "AIzaSyBKJQsifxDIwB1_3Q_KU5U3krqscF_vXl8",
+  authDomain: "wedirect-60958.firebaseapp.com",
+  projectId: "wedirect-60958",
+  storageBucket: "wedirect-60958.appspot.com",
+  messagingSenderId: "119747797198",
+  appId: "1:119747797198:web:421446f171f15d727df09f",
+  measurementId: "G-JN68RL82NF"
+};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

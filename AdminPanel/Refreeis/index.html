@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>Refreeis List</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="col-md-6">
+    <h4>Refreeis List</h4><br>
+  <form>
+    <!-- <div class="form-group">
+    <label>Full Name</label>
+    <input type="text" class="form-control" id="firstname" placeholder="first name">
+  </div>
+  <div class="form-group">
+    <label>Last name</label>
+    <input type="text" class="form-control" id="lastname"placeholder="last name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label>Domain</label>
+    <input type="text" class="form-control" id="domain"placeholder="domain">
+  </div>
+  <div class="form-group">
+    <label>Department</label>
+    <input type="text" class="form-control" id="Department"placeholder="Department">
+  </div>
+  
+  <div class="form-group">
+    <label>Experience of Years</label>
+    <input type="text" class="form-control" id="Experience"placeholder="Experience">
+  </div>
+  <div class="form-group">
+    <label>Short Description about Reafreeis</label>
+    <input type="text" class="form-control" id="Short"placeholder="Short">
+  </div> -->
+  <button type="submit" id="submit" class="btn btn-primary" style="visibility: hidden">Submit</button>
+</form>
+</div>
+
+  <button type="submit" id="getData" class="btn btn-primary" style="width: 850px;">Search Refriees</button>
+
+<div class="col-md-6">
+<table class="table table-striped" id='dataTbl'>
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Domain</th>
+      <th scope="col">Department</th>
+      <th scope="col">Experience</th>
+      <th scope="col">Short Description</th>
+    </tr>
+  </thead>
+</table>
+</div>
+
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+  import { getDatabase, set, ref ,push, child, onValue} from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBKJQsifxDIwB1_3Q_KU5U3krqscF_vXl8",
+    authDomain: "wedirect-60958.firebaseapp.com",
+    databaseURL: "https://wedirect-60958-default-rtdb.firebaseio.com",
+    projectId: "wedirect-60958",
+    storageBucket: "wedirect-60958.appspot.com",
+    messagingSenderId: "119747797198",
+    appId: "1:119747797198:web:421446f171f15d727df09f",
+    measurementId: "G-JN68RL82NF"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  
+  // Get a reference to the database service
+  const database = getDatabase(app);
+
+  // write data
+  submit.addEventListener('click',(e) => {
+    var firstname = document.getElementById('firstname').value;  
+    var lastname = document.getElementById('lastname').value;  
+    var email = document.getElementById('email').value;  
+    var domain = document.getElementById('domain').value;  
+    var Department = document.getElementById('Department').value;  
+    var Experience = document.getElementById('Experience').value;  
+    var Short = document.getElementById('Short').value;  
+
+    const userId = push(child(ref(database), 'RefreeisList')).key;
+   
+    set(ref(database, 'RefreeisList/' + userId), {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        domain: domain,
+        Department: Department,
+        Experience: Experience,
+        Short: Short
+   });
+   alert('saved');
+  });
+
+  // read data
+  getData.addEventListener('click',(e) => {
+
+    $('#dataTbl td').remove();
+    var rowNum = 0; 
+    const dbRef = ref(database, 'RefreeisList/');
+
+    onValue(dbRef, (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+      const childKey = childSnapshot.key;
+      const childData = childSnapshot.val();
+      // ...
+      rowNum += 1; 
+      var row = "<tr><td>" + rowNum + "</td><td>" + childData.firstname + "</td><td>" + childData.lastname + "</td><td>" + childData.email + "</td></tr>" +  childData.domain + "</td></tr>" + childData.Department + "</td></tr>" + childData.Experience + "</td></tr>" + childData.Short + "</td></tr>"
+
+      $(row).appendTo('#dataTbl');
+      
+      });
+    }, {
+       onlyOnce: true
+    });
+
+
+  });
+</script>
