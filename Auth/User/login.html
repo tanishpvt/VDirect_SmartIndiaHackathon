@@ -99,12 +99,12 @@ import { getDatabase, ref, set, child, get}
      let keepLoggedIn = document.getElementById('customSwitch1').checked;
       if(!keepLoggedIn){
           sessionStorage.setItem('user',JSON.stringify(user));
-          window.location="home.html";
+          window.location="landing_page.html";
       }
       else{
           localStorage.setItem('keepLoggedIn','yes');
           localStorage.setItem('user', JSON.stringify(user));
-          window.location="home.html";
+          window.location="landing_page.html";
       }
      }
 

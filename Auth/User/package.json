@@ -1,0 +1,20 @@
+{
+  "name": "WeDirect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jquery-3.6.0.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanishpvt/VDirect_SmartIndiaHackathon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanishpvt/VDirect_SmartIndiaHackathon/issues"
+  },
+  "homepage": "https://github.com/tanishpvt/VDirect_SmartIndiaHackathon#readme"
+}
